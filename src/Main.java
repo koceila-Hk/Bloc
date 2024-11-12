@@ -3,12 +3,40 @@ import java.util.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        IBloc newBloc = new Mur(100, 100, 20, true);
-        newBloc.afficherDescription();
+    public static void main(String[] args) throws PorteVerrouilleException {
+//        IBloc newBloc = new Mur(100, 100, 20, true);
+//        newBloc.afficherDescription();
 
-        Kit kitDeDemarrage = new Kit();
-        kitDeDemarrage.afficherKit();
+        // Exception
+        try {
+            Bloc b = new Mur(0,1,1,false);
+            b.afficherDescription();
+        } catch (IllegalArgumentException e) {
+            System.out.println("Valeurs pour construire le bloc invalides");
+        }
+//        IBloc c = new Mur(0,0,0,false);
+//        c.afficherDescription();
+
+
+
+        //Exception Porte
+        try {
+            Porte porte = new Porte(1,1,1, true);
+            porte.verrouiller();
+        } catch (PorteVerrouilleException e) {
+            System.out.println("La porte est déjà vérrouillée");
+        }
+
+          Kit kitDeDemarrage = new Kit();
+          kitDeDemarrage.afficherKit();
+        // Exception
+        try {
+            int result = kitDeDemarrage.getMotsCles().size();
+            System.out.println("Nombre de mots clés: " + result);
+        } catch (NullPointerException exception) {
+            System.out.println("Liste de mots clés indisponible");
+        }
+
 
 
 

@@ -1,5 +1,5 @@
 import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Kit {
@@ -26,4 +26,11 @@ public class Kit {
         }
     }
 
+    public Set<String> getMotsCles() {
+        return motsCles;
+    }
+
+    public Set<IBloc> getBlocs() {
+        return blocs;
+    }
 }

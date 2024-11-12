@@ -1,3 +1,4 @@
+import enums.Couleur;
 
 public abstract class Bloc implements IBloc {
 
@@ -7,6 +8,9 @@ public abstract class Bloc implements IBloc {
     protected Couleur couleur;
 
     public Bloc(final int longueur, final int largeur, final int hauteur) {
+        if (longueur < MIN_LONGUEUR || largeur < MIN_LARGEUR || hauteur < MIN_HAUTEUR) {
+            throw new IllegalArgumentException();
+        }
         this.longueur = longueur;
         this.largeur = largeur;
         this.hauteur = hauteur;

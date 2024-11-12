@@ -1,3 +1,4 @@
+import enums.Couleur;
 
 public class Porte extends Bloc {
 
@@ -16,6 +17,16 @@ public class Porte extends Bloc {
     @Override
     public void afficherDescription() {
         System.out.println("Je suis une porte !");
+    }
+
+
+    public void verrouiller() throws PorteVerrouilleException {
+        if (verrouillee) {
+            throw new PorteVerrouilleException();
+        } else {
+            System.out.println("Porte vérrouillée");
+            verrouillee = true;
+        }
     }
 
 }

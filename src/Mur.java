@@ -1,3 +1,4 @@
+import enums.Couleur;
 
 public class Mur extends Bloc {
 
